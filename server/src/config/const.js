@@ -1,0 +1,1 @@
+export const TARGET_PRODUCTS = [2181, 2142, 2195];
