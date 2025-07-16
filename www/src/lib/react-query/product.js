@@ -19,7 +19,7 @@ export function useProduct() {
         });
     };
 
-    const useProducts = () => {
+    const useScan = () => {
         return useQuery({
             queryKey: ["products"],
             queryFn: async () => {
@@ -33,7 +33,7 @@ export function useProduct() {
         });
     };
 
-    const useSyncProducts = () => {
+    const useSync = () => {
         return useMutation({
             mutationFn: async () => {
                 const response = await axios.post("/products/sync");
@@ -53,5 +53,5 @@ export function useProduct() {
         });
     };
 
-    return { useAnalytics, useProducts, useSyncProducts };
+    return { useAnalytics, useScan, useSync };
 }

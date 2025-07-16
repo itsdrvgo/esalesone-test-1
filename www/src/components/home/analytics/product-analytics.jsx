@@ -6,7 +6,7 @@ import { ProductsTable } from "./products-table";
 import { SyncButton } from "./sync-button";
 
 export function ProductAnalytics() {
-    const { useAnalytics, useProducts, useSyncProducts } = useProduct();
+    const { useAnalytics, useScan, useSync } = useProduct();
 
     const {
         data: analyticsData,
@@ -18,10 +18,9 @@ export function ProductAnalytics() {
         data: productsData,
         isLoading: productsLoading,
         error: productsError,
-    } = useProducts();
+    } = useScan();
 
-    const { mutateAsync: syncProducts, isPending: syncLoading } =
-        useSyncProducts();
+    const { mutateAsync: syncProducts, isPending: syncLoading } = useSync();
 
     return (
         <div className="container mx-auto py-8 space-y-8">
